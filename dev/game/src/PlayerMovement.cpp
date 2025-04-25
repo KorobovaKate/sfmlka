@@ -1,5 +1,6 @@
 #include <PlayerMovement.h>
 #include <Game.h>
+#include <PlayerProgress.h>
 
 
 void PlayerMovement::OnCollision(RectCollider* other)
@@ -12,6 +13,8 @@ void PlayerMovement::OnCollision(RectCollider* other)
 			//other->gameObject->GetComponent<RectCollider>()->enabled = false;
 			//other->gameObject->GetComponent<SpriteRenderer>()->enabled = false;
 			gameObject->scene->RemoveObject(other->gameObject);
+			CurrentPlayerProgress.Score += 10;
+			CurrentPlayerProgress.WriteToFile();
 		}
 		else
 		{

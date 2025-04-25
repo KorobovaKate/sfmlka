@@ -33,6 +33,7 @@
     <ClCompile Include="dev\game\src\PlayerMovement.cpp" />
     <ClCompile Include="dev\game\src\prefabs.cpp" />
     <ClCompile Include="dev\game\src\SceneList.cpp" />
+    <ClCompile Include="dev\game\src\PlayerProgress.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dev\engine\include\components\Behaviour.h" />
@@ -46,6 +47,7 @@
     <ClInclude Include="dev\game\include\EnemyMovement.h" />
     <ClInclude Include="dev\game\include\FinishTrigger.h" />
     <ClInclude Include="dev\game\include\PlayerMovement.h" />
+    <ClInclude Include="dev\game\include\PlayerProgress.h" />
     <ClInclude Include="dev\game\include\prefabs.h" />
     <ClInclude Include="dev\game\include\SceneList.h" />
   </ItemGroup>
