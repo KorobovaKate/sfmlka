@@ -14,6 +14,8 @@ Scene* CreateLevel1()
 	Scene* scene = new Scene();
 
 	scene->showColliders = true;
+	Color bg(172, 233, 254);
+	scene->backgroundColor = bg;
 
 	scene->AddObject(GetGround1({ 10,767 }));
 	scene->AddObject(GetGround3({ 943, 827 }));
@@ -22,6 +24,7 @@ Scene* CreateLevel1()
 	scene->AddObject(GetGround7({ 4641, 760 }));
 	scene->AddObject(GetFinishFlag({ 4994, 785 }, 2));
 	scene->AddObject(GetPlayer({ 94, 761 }));
+	scene->AddObject(GetHUD());
 	
 	return scene;
 }
@@ -31,6 +34,8 @@ Scene* CreateLevel2()
 	Scene* scene = new Scene();
 
 	scene->showColliders = true;
+	Color bg(172, 233, 254);
+	scene->backgroundColor = bg;
 
 	scene->AddObject(GetGround5({ 3, 1240 }));
 	scene->AddObject(GetSpikes({ 430, 1761 }));
@@ -53,6 +58,7 @@ Scene* CreateLevel2()
 	scene->AddObject(GetEnemy({ 4526, 1455 }, 70, { 4897, 1455 }, { 4526, 1455 }));
 	scene->AddObject(GetPlayer({ 73, 1250 }));
 	scene->AddObject(GetFinishFlag({ 5590, 1382 }, 3));
+	scene->AddObject(GetHUD());
 
 	return scene;
 }
@@ -62,6 +68,8 @@ Scene* CreateLevel3()
 	Scene* scene = new Scene();
 
 	scene->showColliders = true;
+	Color bg(172, 233, 254);
+	scene->backgroundColor = bg;
 
 	scene->AddObject(GetGround1({ 3, 1363 }));
 	scene->AddObject(GetWood2({ 4398, 1614 }));
@@ -97,6 +105,7 @@ Scene* CreateLevel3()
 	scene->AddObject(GetEnemy({ 6547, 1613 }, 90, { 6112, 1613 }, { 7001, 1613 }));
 	scene->AddObject(GetPlayer({ 73, 1350 }));
 	scene->AddObject(GetFinishFlag({ 9754, 1263 }, 4));
+	scene->AddObject(GetHUD());
 
 	return scene;
 }

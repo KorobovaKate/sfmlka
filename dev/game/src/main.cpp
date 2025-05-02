@@ -16,8 +16,8 @@ int main()
 	std::string playerName;
 	std::cout << "Добро пожаловать в игру! ";
 	std::cout << "Введите ваше имя: ";
-	std::cin >> playerName;
-
+	//std::cin >> playerName;
+	playerName = "Kate";
 	
 	if (CurrentPlayerProgress.ReadFromFile(playerName) == false)
 	{

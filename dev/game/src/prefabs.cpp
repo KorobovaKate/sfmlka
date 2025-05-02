@@ -2,6 +2,8 @@
 #include <PlayerMovement.h>
 #include <FinishTrigger.h>
 #include <EnemyMovement.h>
+#include <HUDController.h>
+
 
 GameObject* GetPlayer(sf::Vector2f position)
 {
@@ -159,4 +161,12 @@ GameObject* GetEnemy(sf::Vector2f position, float movementSpeed, sf::Vector2f mo
 	enemy->tag = "Enemy";
 
 	return enemy;
+}
+
+GameObject* GetHUD()
+{
+	GameObject* hud = new GameObject("HUD");
+	hud->AddComponent(new HUDController());
+	hud->AddComponent(new TextRenderer("resources\\fonts\\comic.ttf", {0, 0}, ""));
+	return hud;
 }

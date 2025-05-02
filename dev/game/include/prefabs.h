@@ -1,5 +1,6 @@
 #pragma once
 #include <GameObject.h>
+#include <components/TextRenderer.h>
 
 GameObject* GetPlayer(sf::Vector2f position);
 GameObject* GetBox(sf::Vector2f position);
@@ -15,3 +16,4 @@ GameObject* GetWood(sf::Vector2f position);
 GameObject* GetWood2(sf::Vector2f position);
 GameObject* GetSpikes(sf::Vector2f position);
 GameObject* GetEnemy(sf::Vector2f position, float movementSpeed, sf::Vector2f movementPoint1, sf::Vector2f movementPoint2);
+GameObject* GetHUD();
