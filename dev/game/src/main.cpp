@@ -14,6 +14,7 @@ int main()
 {
 	setlocale(0, "RUS");
 	std::string playerName;
+	std::cout << "Добро пожаловать в игру! ";
 	std::cout << "Введите ваше имя: ";
 	std::cin >> playerName;
 
