@@ -5,6 +5,7 @@ class PlayerMovement : public Behaviour
 {
 public:
 	void Update(); //вызывается каждый кадр игры
+	void Died(int score);
 	void OnCollision(RectCollider* other);
 	sf::Vector2f startPosition;
 private:

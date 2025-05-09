@@ -10,28 +10,19 @@ void PlayerMovement::OnCollision(RectCollider* other)
 		std::cout << gameObject->getPosition().y - other->gameObject->getPosition().y << std::endl;
 		if (gameObject->getPosition().y - other->gameObject->getPosition().y < -55)
 		{
-			//other->gameObject->GetComponent<RectCollider>()->enabled = false;
-			//other->gameObject->GetComponent<SpriteRenderer>()->enabled = false;
 			gameObject->scene->RemoveObject(other->gameObject);
 			CurrentPlayerProgress.Score += 15;
 			CurrentPlayerProgress.WriteToFile();
 		}
 		else
 		{
-			isRespawned = true;
-			gameObject->GetComponent<RectCollider>()->enabled = false;
-			gameObject->GetComponent<SpriteRenderer>()->enabled = false;
-			CurrentPlayerProgress.Score -= 20;
-			//gameObject->setPosition(startPosition);
-			//gameObject->GetComponent<RectCollider>()->SyncTransform(); //без этой строчки события onCollision срабатывает дважды
+			Died(20);
 		}
 	}
-	else if (other->gameObject->tag == "Spikes")
+	
+	if (other->gameObject->tag == "Spikes")
 	{
-		isRespawned = true;
-		gameObject->GetComponent<RectCollider>()->enabled = false;
-		gameObject->GetComponent<SpriteRenderer>()->enabled = false;
-		CurrentPlayerProgress.Score -= 5;
+		Died(5);
 	}
 	
 }
@@ -56,10 +47,7 @@ void PlayerMovement::Update() //вызывается каждый кадр игры
 	//падение
 	if (gameObject->getPosition().y > 1900)
 	{
-		isRespawned = true;
-		gameObject->GetComponent<RectCollider>()->enabled = false;
-		gameObject->GetComponent<SpriteRenderer>()->enabled = false;
-		CurrentPlayerProgress.Score -= 40;
+		Died(40);
 	}
 
 
@@ -112,5 +100,14 @@ void PlayerMovement::Update() //вызывается каждый кадр игры
 	gameObject->GetComponent<SpriteRenderer>()->sprite.rotate(speed.x * Game::deltaTime * rotationSpeedFactor);
 	Game::mainCamera->setCenter(gameObject->getPosition());
 
+}
+
+void PlayerMovement::Died(int score)
+{
+	isRespawned = true;
+	gameObject->GetComponent<RectCollider>()->enabled = false;
+	gameObject->GetComponent<SpriteRenderer>()->enabled = false;
+	CurrentPlayerProgress.Score -= score;
+	CurrentPlayerProgress.WriteToFile();
 }
 

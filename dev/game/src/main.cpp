@@ -8,6 +8,7 @@
 #include <SceneList.h>
 #include <PlayerProgress.h>
 #include <locale.h>
+#include <PlayerList.h>
 
 
 int main()
@@ -24,7 +25,9 @@ int main()
 		std::cout << "Такой игрок не найден" << std::endl;
 		CurrentPlayerProgress.Name = playerName;
 		CurrentPlayerProgress.Score = 0;
+		CurrentPlayerProgress.CurrentLevel = 1;
 		CurrentPlayerProgress.WriteToFile();
+		CurrentPlayerList.AddPlayer(playerName);
 	}
 
 
@@ -32,7 +35,7 @@ int main()
 	std::cout<< CurrentPlayerProgress.Score;
 
 	Game* game = new Game({ 800, 600 }, "RedBall");
-	game->StartGame(CreateSceneByNumber(1));
+	game->StartGame(CreateSceneByNumber(CurrentPlayerProgress.CurrentLevel));
 
 	
 }

@@ -9,6 +9,7 @@ class PlayerProgress
 public:
 	std::string Name;
 	int Score;
+	int CurrentLevel;
 	bool ReadFromFile(std::string fileName)
 	{
 		std::ifstream file;
@@ -20,6 +21,7 @@ public:
 		}
 		file >> Name;
 		file >> Score;
+		file >> CurrentLevel;
 		file.close();
 		return true;
 	}
@@ -30,7 +32,9 @@ public:
 		if (file.is_open() == false)
 			return false;
 
-		file << Name << " " << Score;
+		file << Name << std::endl;
+		file << Score << std::endl;
+		file << CurrentLevel << std::endl;
 		file.close();
 		return true;
 	}

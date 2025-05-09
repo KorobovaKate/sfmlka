@@ -73,7 +73,9 @@ Scene* CreateLevel3()
 
 	scene->AddObject(GetGround1({ 3, 1363 }));
 	scene->AddObject(GetWood2({ 4398, 1614 }));
-	scene->AddObject(GetWood2({ 5100, 1614 }));
+	GameObject* wood2 = GetWood2({ 5100, 1614 });
+	//wood2->setScale({-1, 1});
+	scene->AddObject(wood2);
 	scene->AddObject(GetGround7({ 4612, 1353 }));
 	scene->AddObject(GetGround4({ 5758, 1509 }));
 	scene->AddObject(GetGround3({ 6238, 1317}));
@@ -104,8 +106,19 @@ Scene* CreateLevel3()
 	scene->AddObject(GetEnemy({ 2269, 1888 }, 0, { 2269, 1888 }, { 2269, 1888 }));
 	scene->AddObject(GetEnemy({ 6547, 1613 }, 90, { 6112, 1613 }, { 7001, 1613 }));
 	scene->AddObject(GetPlayer({ 73, 1350 }));
-	scene->AddObject(GetFinishFlag({ 9754, 1263 }, 4));
+	scene->AddObject(GetFinishFlag({ 9754, 1263 }, 1));
 	scene->AddObject(GetHUD());
 
+	return scene;
+}
+
+Scene* CreateGameOver()
+{
+	Scene* scene = new Scene();
+
+	scene->showColliders = true;
+	Color bg(172, 233, 254);
+	scene->backgroundColor = bg;
+	//написать одельный скрипт, про пробел - 1 уровень, на подобии плейр мувемент
 	return scene;
 }

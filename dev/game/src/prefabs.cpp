@@ -167,7 +167,11 @@ GameObject* GetEnemy(sf::Vector2f position, float movementSpeed, sf::Vector2f mo
 GameObject* GetHUD()
 {
 	GameObject* hud = new GameObject("HUD");
-	hud->AddComponent(new HUDController());
-	hud->AddComponent(new TextRenderer("resources\\fonts\\comic.ttf", {0, 0}, ""));
+	TextRenderer* str = new TextRenderer("resources\\fonts\\comic.ttf", { 0, 0 }, "");
+	TextRenderer* ltr = new TextRenderer("resources\\fonts\\comic.ttf", { 0, 35 }, "");
+
+	hud->AddComponent(new HUDController(str, ltr));
+	hud->AddComponent(str);
+	hud->AddComponent(ltr);
 	return hud;
 }
