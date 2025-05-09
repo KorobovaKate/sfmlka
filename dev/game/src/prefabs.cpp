@@ -146,6 +146,7 @@ GameObject* GetSpikes(sf::Vector2f position)
 	spikes->AddComponent(new SpriteRenderer("resources\\sprites\\spikes.png"));
 	spikes->AddComponent(new RectCollider(sf::FloatRect(0, 0, 155, 29)));
 	spikes->setPosition(position);
+	spikes->tag = "Spikes";
 
 	return spikes;
 }

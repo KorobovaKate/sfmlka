@@ -26,17 +26,13 @@ int main()
 		CurrentPlayerProgress.Score = 0;
 		CurrentPlayerProgress.WriteToFile();
 	}
-	
-
-
-
 
 
 	std::cout<< CurrentPlayerProgress.Name;
 	std::cout<< CurrentPlayerProgress.Score;
 
 	Game* game = new Game({ 800, 600 }, "RedBall");
-	game->StartGame(CreateSceneByNumber(2));
+	game->StartGame(CreateSceneByNumber(1));
 
 	
 }

@@ -13,7 +13,7 @@ void PlayerMovement::OnCollision(RectCollider* other)
 			//other->gameObject->GetComponent<RectCollider>()->enabled = false;
 			//other->gameObject->GetComponent<SpriteRenderer>()->enabled = false;
 			gameObject->scene->RemoveObject(other->gameObject);
-			CurrentPlayerProgress.Score += 10;
+			CurrentPlayerProgress.Score += 15;
 			CurrentPlayerProgress.WriteToFile();
 		}
 		else
@@ -21,10 +21,19 @@ void PlayerMovement::OnCollision(RectCollider* other)
 			isRespawned = true;
 			gameObject->GetComponent<RectCollider>()->enabled = false;
 			gameObject->GetComponent<SpriteRenderer>()->enabled = false;
+			CurrentPlayerProgress.Score -= 20;
 			//gameObject->setPosition(startPosition);
 			//gameObject->GetComponent<RectCollider>()->SyncTransform(); //без этой строчки события onCollision срабатывает дважды
 		}
 	}
+	else if (other->gameObject->tag == "Spikes")
+	{
+		isRespawned = true;
+		gameObject->GetComponent<RectCollider>()->enabled = false;
+		gameObject->GetComponent<SpriteRenderer>()->enabled = false;
+		CurrentPlayerProgress.Score -= 5;
+	}
+	
 }
 
 void PlayerMovement::Update() //вызывается каждый кадр игры
@@ -43,6 +52,16 @@ void PlayerMovement::Update() //вызывается каждый кадр игры
 		}
 		return;
 	}
+
+	//падение
+	if (gameObject->getPosition().y > 1900)
+	{
+		isRespawned = true;
+		gameObject->GetComponent<RectCollider>()->enabled = false;
+		gameObject->GetComponent<SpriteRenderer>()->enabled = false;
+		CurrentPlayerProgress.Score -= 40;
+	}
+
 
 	//гравитация
 	speed.y = speed.y + 20;
