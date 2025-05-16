@@ -24,6 +24,13 @@ void PlayerMovement::OnCollision(RectCollider* other)
 	{
 		Died(5);
 	}
+
+	if (other->gameObject->tag == "Star")
+	{
+		gameObject->scene->RemoveObject(other->gameObject);
+		CurrentPlayerProgress.Score += 5;
+		CurrentPlayerProgress.WriteToFile();
+	}
 	
 }
 

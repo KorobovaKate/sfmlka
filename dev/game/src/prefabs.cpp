@@ -161,6 +161,16 @@ GameObject* GetSpikes(sf::Vector2f position)
 	return spikes;
 }
 
+GameObject* GetStar(sf::Vector2f position)
+{
+	GameObject* star = new GameObject("Star");
+	star->AddComponent(new SpriteRenderer("resources\\sprites\\star.png"));
+	star->AddComponent(new RectCollider(sf::FloatRect(0, 0, 58, 58)));
+	star->setPosition(position);
+	star->tag = "Star";
+	return star;
+}
+
 GameObject* GetEnemy(sf::Vector2f position, float movementSpeed, sf::Vector2f movementPoint1, sf::Vector2f movementPoint2)
 {
 	GameObject* enemy = new GameObject("Enemy");

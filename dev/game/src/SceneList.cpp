@@ -19,6 +19,9 @@ Scene* CreateLevel1()
 
 	scene->AddObject(GetGround1({ 10,767 }));
 	scene->AddObject(GetGround3({ 943, 827 }));
+	scene->AddObject(GetStar({ 1275, 650 }));
+	scene->AddObject(GetStar({ 4250, 1081 }));
+	scene->AddObject(GetWood1({ 4193, 1179 }));
 	scene->AddObject(GetWood2({ 4452, 970 }));
 	scene->AddObject(GetBox({ 3051, 990 }));
 	scene->AddObject(GetGround7({ 4641, 760 }));
@@ -55,6 +58,7 @@ Scene* CreateLevel2()
 	scene->AddObject(GetGround7({ 5062, 1360 }));
 
 	scene->AddObject(GetEnemy({ 4472, 1455 }, 70, { 4067, 1455 }, { 4472, 1455 }));
+	scene->AddObject(GetStar({ 4517, 1297 }));
 	scene->AddObject(GetEnemy({ 4526, 1455 }, 70, { 4897, 1455 }, { 4526, 1455 }));
 	scene->AddObject(GetPlayer({ 73, 1250 }));
 	scene->AddObject(GetFinishFlag({ 5590, 1382 }, 3));
@@ -89,6 +93,7 @@ Scene* CreateLevel3()
 
 	scene->AddObject(GetWood1({ 1599, 1590 }));
 	scene->AddObject(GetWood1({ 2308, 1590}));
+	scene->AddObject(GetStar({ 2034, 1313 }));
 	scene->AddObject(GetWood1({ 1839, 1500 }));
 	scene->AddObject(GetWood1({ 2086, 1500 }));
 	scene->AddObject(GetBox({ 3193, 1583 }));
@@ -105,6 +110,7 @@ Scene* CreateLevel3()
 	//scene->AddObject(GetEnemy({ 400, 1465 }, 70, {200, 1465 }, {400, 1465 }));
 	scene->AddObject(GetEnemy({ 1815, 1888 }, 0, { 1815, 1888 }, { 1815, 1888 }));
 	scene->AddObject(GetEnemy({ 2269, 1888 }, 0, { 2269, 1888 }, { 2269, 1888 }));
+	scene->AddObject(GetStar({ 6547, 1591 }));
 	scene->AddObject(GetEnemy({ 6547, 1613 }, 90, { 6112, 1613 }, { 7001, 1613 }));
 	scene->AddObject(GetPlayer({ 73, 1350 }));
 	scene->AddObject(GetFinishFlag({ 9754, 1263 }, 1));

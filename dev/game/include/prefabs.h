@@ -16,5 +16,6 @@ GameObject* GetWood1(sf::Vector2f position);
 GameObject* GetWood2(sf::Vector2f position);
 GameObject* GetWood3(sf::Vector2f position);
 GameObject* GetSpikes(sf::Vector2f position);
+GameObject* GetStar(sf::Vector2f position);
 GameObject* GetEnemy(sf::Vector2f position, float movementSpeed, sf::Vector2f movementPoint1, sf::Vector2f movementPoint2);
 GameObject* GetHUD();
