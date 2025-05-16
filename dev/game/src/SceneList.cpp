@@ -46,10 +46,10 @@ Scene* CreateLevel2()
 	scene->AddObject(GetBox({ 922, 1622 }));
 	scene->AddObject(GetBox({ 922, 1447 }));
 	scene->AddObject(GetGround2({ 1993, 1230 }));
-	scene->AddObject(GetWood({ 3990, 1485 }));
-	scene->AddObject(GetWood({ 4125, 1485 }));
-	scene->AddObject(GetWood({ 4838, 1485 }));
-	scene->AddObject(GetWood({ 4973, 1485 }));
+	scene->AddObject(GetWood1({ 3990, 1485 }));
+	scene->AddObject(GetWood1({ 4125, 1485 }));
+	scene->AddObject(GetWood1({ 4838, 1485 }));
+	scene->AddObject(GetWood1({ 4973, 1485 }));
 	scene->AddObject(GetGround7({ 3378, 1360 }));
 	scene->AddObject(GetGround7({ 4220, 1360 }));
 	scene->AddObject(GetGround7({ 5062, 1360 }));
@@ -73,9 +73,10 @@ Scene* CreateLevel3()
 
 	scene->AddObject(GetGround1({ 3, 1363 }));
 	scene->AddObject(GetWood2({ 4398, 1614 }));
-	GameObject* wood2 = GetWood2({ 5100, 1614 });
-	//wood2->setScale({-1, 1});
-	scene->AddObject(wood2);
+	scene->AddObject(GetWood3({ 5150, 1614 }));
+	//scene->AddObject(wood3({ 5100, 1614 }));
+	
+	//scene->AddObject(wood2);
 	scene->AddObject(GetGround7({ 4612, 1353 }));
 	scene->AddObject(GetGround4({ 5758, 1509 }));
 	scene->AddObject(GetGround3({ 6238, 1317}));
@@ -86,14 +87,14 @@ Scene* CreateLevel3()
 	scene->AddObject(GetSpikes({ 2014, 1732 }));
 	scene->AddObject(GetSpikes({ 2364, 1732 }));
 
-	scene->AddObject(GetWood({ 1599, 1590 }));
-	scene->AddObject(GetWood({ 2308, 1590}));
-	scene->AddObject(GetWood({ 1839, 1500 }));
-	scene->AddObject(GetWood({ 2086, 1500 }));
+	scene->AddObject(GetWood1({ 1599, 1590 }));
+	scene->AddObject(GetWood1({ 2308, 1590}));
+	scene->AddObject(GetWood1({ 1839, 1500 }));
+	scene->AddObject(GetWood1({ 2086, 1500 }));
 	scene->AddObject(GetBox({ 3193, 1583 }));
-	scene->AddObject(GetWood({ 8634, 1554 }));
-	scene->AddObject(GetWood({ 8884, 1496 }));
-	scene->AddObject(GetWood({ 9142, 1423 }));
+	scene->AddObject(GetWood1({ 8634, 1554 }));
+	scene->AddObject(GetWood1({ 8884, 1496 }));
+	scene->AddObject(GetWood1({ 9142, 1423 }));
 
 	scene->AddObject(GetSpikes({ 8538, 1845 }));
 	scene->AddObject(GetSpikes({ 8722, 1845 }));

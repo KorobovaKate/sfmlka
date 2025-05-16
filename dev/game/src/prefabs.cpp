@@ -120,24 +120,34 @@ GameObject* GetGround7(sf::Vector2f position)
 	return ground;
 }
 
-GameObject* GetWood(sf::Vector2f position)
+GameObject* GetWood1(sf::Vector2f position)
 {
-	GameObject* wood = new GameObject("Wood");
-	wood->AddComponent(new SpriteRenderer("resources\\sprites\\wood.png"));
-	wood->AddComponent(new RectCollider(sf::FloatRect(2, 2, 145, 12)));
-	wood->setPosition(position);
+	GameObject* wood1 = new GameObject("Wood");
+	wood1->AddComponent(new SpriteRenderer("resources\\sprites\\wood.png"));
+	wood1->AddComponent(new RectCollider(sf::FloatRect(2, 2, 145, 12)));
+	wood1->setPosition(position);
 
-	return wood;
+	return wood1;
 }
 
 GameObject* GetWood2(sf::Vector2f position)
 {
-	GameObject* wood = new GameObject("Wood");
-	wood->AddComponent(new SpriteRenderer("resources\\sprites\\wood_2.png"));
-	wood->AddComponent(new RectCollider(sf::FloatRect(1, 5, 317, 26)));
-	wood->setPosition(position);
+	GameObject* wood2 = new GameObject("Wood");
+	wood2->AddComponent(new SpriteRenderer("resources\\sprites\\wood_2.png"));
+	wood2->AddComponent(new RectCollider(sf::FloatRect(1, 5, 317, 26)));
+	wood2->setPosition(position);
 
-	return wood;
+	return wood2;
+}
+
+GameObject* GetWood3(sf::Vector2f position)
+{
+	GameObject* wood3 = new GameObject("Wood");
+	wood3->AddComponent(new SpriteRenderer("resources\\sprites\\wood_3.png"));
+	wood3->AddComponent(new RectCollider(sf::FloatRect(1, 5, 317, 26)));
+	wood3->setPosition(position);
+
+	return wood3;
 }
 
 GameObject* GetSpikes(sf::Vector2f position)
