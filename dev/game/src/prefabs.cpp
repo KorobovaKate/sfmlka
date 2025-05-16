@@ -19,6 +19,18 @@ GameObject* GetPlayer(sf::Vector2f position)
 	return player;
 }
 
+/*GameObject* GetBoss(sf::Vector2f position, float movementSpeed, sf::Vector2f movementPoint1, sf::Vector2f movementPoint2)
+{
+	GameObject* boss = new GameObject("Boss");
+	boss->AddComponent(new SpriteRenderer("resources\\sprites\\boss.png"));
+	boss->AddComponent(new RectCollider(sf::FloatRect(0, 0, 731, 731)));
+	boss->AddComponent(new EnemyMovement(movementSpeed, movementPoint1, movementPoint2));
+	boss->setPosition(position);
+	boss->tag = "Boss";
+
+	return boss;
+}*/
+
 GameObject* GetBox(sf::Vector2f position)
 {
 	GameObject* box = new GameObject("Box");
