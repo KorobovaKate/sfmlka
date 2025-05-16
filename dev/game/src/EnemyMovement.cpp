@@ -12,7 +12,7 @@ EnemyMovement::EnemyMovement(float movementSpeed, sf::Vector2f movementPoint1, s
 sf::Vector2f MoveTowards(sf::Vector2f current, sf::Vector2f target, float maxDistanceDelta)
 {
 	sf::Vector2f moveStep = target - current;
-	float distance = sqrt(moveStep.x * moveStep.x + moveStep.y + moveStep.y);
+	float distance = sqrt(moveStep.x * moveStep.x + moveStep.y * moveStep.y);
 	if (maxDistanceDelta < distance)
 	{
 		moveStep.x = moveStep.x / distance * maxDistanceDelta;

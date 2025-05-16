@@ -3,6 +3,7 @@
 #include <FinishTrigger.h>
 #include <EnemyMovement.h>
 #include <HUDController.h>
+#include <GameOverPanel.h>
 
 
 GameObject* GetPlayer(sf::Vector2f position)
@@ -19,7 +20,7 @@ GameObject* GetPlayer(sf::Vector2f position)
 	return player;
 }
 
-/*GameObject* GetBoss(sf::Vector2f position, float movementSpeed, sf::Vector2f movementPoint1, sf::Vector2f movementPoint2)
+GameObject* GetBoss(sf::Vector2f position, float movementSpeed, sf::Vector2f movementPoint1, sf::Vector2f movementPoint2)
 {
 	GameObject* boss = new GameObject("Boss");
 	boss->AddComponent(new SpriteRenderer("resources\\sprites\\boss.png"));
@@ -29,7 +30,7 @@ GameObject* GetPlayer(sf::Vector2f position)
 	boss->tag = "Boss";
 
 	return boss;
-}*/
+}
 
 GameObject* GetBox(sf::Vector2f position)
 {
@@ -206,4 +207,15 @@ GameObject* GetHUD()
 	hud->AddComponent(str);
 	hud->AddComponent(ltr);
 	return hud;
+}
+
+GameObject* GetGameOverPanel()
+{
+	GameObject* gameOverPanel = new GameObject("GameOverPanel");
+
+	//смещение относительно левого верхнего угла окна
+	gameOverPanel->AddComponent(new TextRenderer("resources\\fonts\\comic.ttf", { 150, 200 }, " ")); 
+	gameOverPanel->AddComponent(new GameOverPanel());
+
+	return gameOverPanel;
 }

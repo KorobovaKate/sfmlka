@@ -3,7 +3,7 @@
 #include <components/TextRenderer.h>
 
 GameObject* GetPlayer(sf::Vector2f position);
-//GameObject* GetBoss(sf::Vector2f position, float movementSpeed, sf::Vector2f movementPoint1, sf::Vector2f movementPoint2);
+GameObject* GetBoss(sf::Vector2f position, float movementSpeed, sf::Vector2f movementPoint1, sf::Vector2f movementPoint2);
 GameObject* GetBox(sf::Vector2f position);
 GameObject* GetFinishFlag(sf::Vector2f position, int nextLevel);
 GameObject* GetGround1(sf::Vector2f position);
@@ -20,3 +20,4 @@ GameObject* GetSpikes(sf::Vector2f position);
 GameObject* GetStar(sf::Vector2f position);
 GameObject* GetEnemy(sf::Vector2f position, float movementSpeed, sf::Vector2f movementPoint1, sf::Vector2f movementPoint2);
 GameObject* GetHUD();
+GameObject* GetGameOverPanel();

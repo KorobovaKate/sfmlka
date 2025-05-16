@@ -28,6 +28,7 @@
     <ClCompile Include="dev\engine\src\Scene.cpp" />
     <ClCompile Include="dev\game\src\EnemyMovement.cpp" />
     <ClCompile Include="dev\game\src\FinishTrigger.cpp" />
+    <ClCompile Include="dev\game\src\GameOverPanel.cpp" />
     <ClCompile Include="dev\game\src\HUDController.cpp" />
     <ClCompile Include="dev\game\src\main.cpp" />
     <ClCompile Include="dev\engine\src\components\RectCollider.cpp" />
@@ -50,6 +51,7 @@
     <ClInclude Include="dev\engine\include\Game.h" />
     <ClInclude Include="dev\game\include\EnemyMovement.h" />
     <ClInclude Include="dev\game\include\FinishTrigger.h" />
+    <ClInclude Include="dev\game\include\GameOverPanel.h" />
     <ClInclude Include="dev\game\include\HUDController.h" />
     <ClInclude Include="dev\game\include\PlayerList.h" />
     <ClInclude Include="dev\game\include\PlayerMovement.h" />

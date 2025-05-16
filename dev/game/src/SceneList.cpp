@@ -113,7 +113,7 @@ Scene* CreateLevel3()
 	scene->AddObject(GetStar({ 6547, 1591 }));
 	scene->AddObject(GetEnemy({ 6547, 1613 }, 90, { 6112, 1613 }, { 7001, 1613 }));
 	scene->AddObject(GetPlayer({ 73, 1350 }));
-	scene->AddObject(GetFinishFlag({ 9754, 1263 }, 1));
+	scene->AddObject(GetFinishFlag({ 9754, 1263 }, -1));
 	scene->AddObject(GetHUD());
 
 	return scene;
@@ -122,10 +122,20 @@ Scene* CreateLevel3()
 Scene* CreateGameOver()
 {
 	Scene* scene = new Scene();
-
 	scene->showColliders = true;
 	Color bg(172, 233, 254);
 	scene->backgroundColor = bg;
+
+	GameObject* ground = GetGround4({ 0, 100 });
+	GameObject* boss = GetBoss({ 30, -20 }, 150, { 30, -20 }, { 30, -200 });
+	ground->setScale(0.3, 0.3);
+	boss->setScale(0.3, 0.3);
+	scene->AddObject(ground);
+	scene->AddObject(boss);
+	scene->AddObject(GetGameOverPanel());
+	Game::mainCamera->setCenter(0, 0);
+	
+
 	//написать одельный скрипт, про пробел - 1 уровень, на подобии плейр мувемент
 	return scene;
 }

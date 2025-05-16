@@ -7,12 +7,13 @@ void PlayerMovement::OnCollision(RectCollider* other)
 {
 	if (other->gameObject->tag == "Enemy")
 	{
-		std::cout << gameObject->getPosition().y - other->gameObject->getPosition().y << std::endl;
+		//std::cout << gameObject->getPosition().y - other->gameObject->getPosition().y << std::endl;
 		if (gameObject->getPosition().y - other->gameObject->getPosition().y < -55)
 		{
 			gameObject->scene->RemoveObject(other->gameObject);
 			CurrentPlayerProgress.Score += 15;
 			CurrentPlayerProgress.WriteToFile();
+			return;
 		}
 		else
 		{
@@ -23,6 +24,7 @@ void PlayerMovement::OnCollision(RectCollider* other)
 	if (other->gameObject->tag == "Spikes")
 	{
 		Died(5);
+		return;
 	}
 
 	if (other->gameObject->tag == "Star")
@@ -30,6 +32,7 @@ void PlayerMovement::OnCollision(RectCollider* other)
 		gameObject->scene->RemoveObject(other->gameObject);
 		CurrentPlayerProgress.Score += 5;
 		CurrentPlayerProgress.WriteToFile();
+		return;
 	}
 	
 }

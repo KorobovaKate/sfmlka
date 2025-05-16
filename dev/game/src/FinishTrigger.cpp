@@ -12,13 +12,18 @@ void FinishTrigger::OnCollision(RectCollider* other)
 {
 	if (other->gameObject->tag == "Player")
 	{
-		LoadScene(CreateSceneByNumber(nextNumberScene));
-
-		CurrentPlayerProgress.Score += 50;
-		CurrentPlayerProgress.CurrentLevel = nextNumberScene;
-
-		CurrentPlayerProgress.WriteToFile();
-
+		if (nextNumberScene == -1)
+		{
+			LoadScene(CreateGameOver());
+			CurrentPlayerProgress.CurrentLevel = 1;
+		}
+		else
+		{
+			LoadScene(CreateSceneByNumber(nextNumberScene));
+			CurrentPlayerProgress.CurrentLevel = nextNumberScene;
+		}
 		
+		CurrentPlayerProgress.Score += 50;
+		CurrentPlayerProgress.WriteToFile();
 	}
 }

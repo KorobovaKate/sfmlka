@@ -40,7 +40,7 @@ void Scene::AddObject(GameObject* object)
     {
         if (behaviours[i]->enabled == false) continue;
 
-        behaviours[i]->Start();
+        //behaviours[i]->Start();
     }
 
 

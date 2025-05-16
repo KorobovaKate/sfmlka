@@ -17,8 +17,8 @@ int main()
 	std::string playerName;
 	std::cout << "Добро пожаловать в игру! ";
 	std::cout << "Введите ваше имя: ";
-	//std::cin >> playerName;
-	playerName = "Kate";
+	std::cin >> playerName;
+	//playerName = "Kate";
 	
 	if (CurrentPlayerProgress.ReadFromFile(playerName) == false)
 	{
@@ -36,6 +36,6 @@ int main()
 
 	Game* game = new Game({ 800, 600 }, "RedBall");
 	game->StartGame(CreateSceneByNumber(CurrentPlayerProgress.CurrentLevel));
-
+	//game->StartGame(CreateGameOver());
 	
 }
