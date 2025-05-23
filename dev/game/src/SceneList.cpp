@@ -126,8 +126,8 @@ Scene* CreateGameOver()
 	Color bg(172, 233, 254);
 	scene->backgroundColor = bg;
 
-	GameObject* ground = GetGround4({ 0, 100 });
-	GameObject* boss = GetBoss({ 30, -20 }, 150, { 30, -20 }, { 30, -200 });
+	GameObject* ground = GetGround4({ 0, 150 });
+	GameObject* boss = GetBoss({ 120, -20 }, 150, { 120, -20 }, { 120, -200 });
 	ground->setScale(0.3, 0.3);
 	boss->setScale(0.3, 0.3);
 	scene->AddObject(ground);
@@ -135,7 +135,5 @@ Scene* CreateGameOver()
 	scene->AddObject(GetGameOverPanel());
 	Game::mainCamera->setCenter(0, 0);
 	
-
-	//написать одельный скрипт, про пробел - 1 уровень, на подобии плейр мувемент
 	return scene;
 }
